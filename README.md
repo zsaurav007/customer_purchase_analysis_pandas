@@ -8,6 +8,21 @@ The dataset (Cust_Purch_FakeData.csv) contains customer purchase details, includ
 
 ## Analysis and Code Snippets
 
+### Display First 5 Rows of Data
+```python
+# Display first 5 rows
+df.head(5)
+```
+```
+   prefix    first      last               email  gender  age  \
+0    Dr.     Ray   Morton  sebvajom@kol.km   Male   38   
+1  Miss  Claudia Rodriquez   acu@jatsot.ug Female   51   
+2  Miss   Harry    Meyer       zuz@lo.wf Female   51   
+3  Miss   Edith  Gilbert   hansohsi@jupec.md Female   55   
+4    Dr.    Lura   Murphy   webediti@je.st Female   20   
+```
+This provides a quick look at the dataset structure and content.
+
 ### Age Analysis
 ```python
 # Find max, min, and mean age
@@ -15,11 +30,11 @@ print('Max. age of the customer is:', df['age'].max())
 print('Min. age of the customer is:', df['age'].min())
 print('Avg. age of the customer is:', df['age'].mean())
 ```
-**Results:**
-- Max. age of the customer is: 65
-- Min. age of the customer is: 18
-- Avg. age of the customer is: 41.55
-
+```
+Max. age of the customer is: 65
+Min. age of the customer is: 18
+Avg. age of the customer is: 41.55
+```
 This helps understand the age distribution of customers.
 
 ### Most Common Customer Names
@@ -27,11 +42,12 @@ This helps understand the age distribution of customers.
 # Find the three most common first names
 df['first'].value_counts(ascending=False).head(3)
 ```
-**Results:**
-- Willie: 130
-- Francis: 124
-- Eula: 86
-
+```
+Willie     130
+Francis    124
+Eula        86
+Name: first, dtype: int64
+```
 Identifies the most frequently occurring first names.
 
 ### Spending Analysis
@@ -41,11 +57,11 @@ print('Max. spending is:', df['price(CAD)'].max())
 print('Min. spending is:', df['price(CAD)'].min())
 print('Avg. spending is:', df['price(CAD)'].mean())
 ```
-**Results:**
-- Max. spending is: 100.0
-- Min. spending is: 0.0
-- Avg. spending is: 49.99
-
+```
+Max. spending is: 100.0
+Min. spending is: 0.0
+Avg. spending is: 49.99
+```
 This provides insights into how much customers typically spend.
 
 ### Credit Card Analysis
@@ -53,17 +69,21 @@ This provides insights into how much customers typically spend.
 # Count the number of people using Visa
 print(df[df['cc_type'] == 'Visa'].count().iloc[0])
 ```
-**Results:** 1721 customers use Visa as their credit card provider.
+```
+1721
+```
+Determines how many customers use Visa as their credit card provider.
 
 ### Most Common Professions
 ```python
 # Find the two most common professions
 df['profession'].value_counts(ascending=False).head(2)
 ```
-**Results:**
-- Preschool Teacher: 112
-- Distribution Manager: 107
-
+```
+Preschool Teacher    112
+Distribution Manager 107
+Name: profession, dtype: int64
+```
 Shows the most frequently occurring professions among customers.
 
 ### Popular Email Providers
@@ -71,13 +91,14 @@ Shows the most frequently occurring professions among customers.
 # Find the top 5 email providers
 df['email'].apply(lambda x: x.split('@')[1]).value_counts().head(5)
 ```
-**Results:**
-1. gmail.com: 1687
-2. me.com: 1676
-3. outlook.com: 1664
-4. live.com: 1660
-5. hotmail.com: 1659
-
+```
+gmail.com      1687
+me.com         1676
+outlook.com    1664
+live.com       1660
+hotmail.com    1659
+Name: email, dtype: int64
+```
 Identifies the most used email domains by customers.
 
 ### Busiest Day of the Week
@@ -85,13 +106,14 @@ Identifies the most used email domains by customers.
 # Find which day of the week has the most customers
 df['weekday'].value_counts().head(5)
 ```
-**Results:**
-1. Saturday: 4376 customers
-2. Wednesday: 4365 customers
-3. Thursday: 4327 customers
-4. Friday: 4316 customers
-5. Monday: 4216 customers
-
+```
+Saturday     4376
+Wednesday    4365
+Thursday     4327
+Friday       4316
+Monday       4216
+Name: weekday, dtype: int64
+```
 Determines which day brings the highest number of customers to the store.
 
 ## Insights
@@ -107,5 +129,5 @@ This analysis provides a foundational understanding of customer purchase behavio
 ## Requirements
 - Python 3.x
 - Pandas library
-- Dataset (Cust_Purch_FakeData.csv)
+- A valid dataset (Cust_Purch_FakeData.csv)
 
