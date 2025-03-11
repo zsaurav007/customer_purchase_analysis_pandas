@@ -8,13 +8,6 @@ The dataset (Cust_Purch_FakeData.csv) contains customer purchase details, includ
 
 ## Analysis and Code Snippets
 
-### Display First 5 Rows of Data
-```python
-# Display first 5 rows
-df.head(5)
-```
-This provides a quick look at the dataset structure and content.
-
 ### Age Analysis
 ```python
 # Find max, min, and mean age
@@ -114,5 +107,5 @@ This analysis provides a foundational understanding of customer purchase behavio
 ## Requirements
 - Python 3.x
 - Pandas library
-- A valid dataset (Cust_Purch_FakeData.csv)
+- Dataset (Cust_Purch_FakeData.csv)
 
